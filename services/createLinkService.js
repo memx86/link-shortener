@@ -9,7 +9,8 @@ const createLinkService = async (link) => {
   const token = nanoid();
   const tokenTimestamp = Date.now();
   const newLink = await Link.create({ link, token, tokenTimestamp });
-  return newLink.token;
+  const HOSTNAME = process.env.HOSTNAME;
+  return `${HOSTNAME}/${newLink.token}`;
 };
 
 module.exports = createLinkService;

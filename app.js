@@ -12,7 +12,7 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/links", linksRouter);
+app.use("/", linksRouter);
 
 app.use(errorHandler);
 
